@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: 1.6.0_35-b10 (Sun Microsystems Inc.)
+Class-Path: lib/ant.jar lib/bcel-5.2.jar lib/jrcs.jar lib/servlet-api.
+ jar lib/swing-layout-0.9.jar lib/lucene-core-3.6.1.jar lib/lucene-spe
+ llchecker-3.6.1.jar lib/derbyclient.jar lib/derby.jar
+

@@ -1,0 +1,2 @@
+[paths]
+default = ssh://anon@hg.opensolaris.org/hg/opengrok/trunk

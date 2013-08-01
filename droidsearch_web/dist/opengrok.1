@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE REFENTRY PUBLIC "-//Sun Microsystems//DTD DocBook V3.0-Based SolBook Subset V2.0//EN">
+<?Pub Inc>
+<refentry id="opengrok-1">
+<refmeta>
+<refentrytitle>opengrok</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="date">Dec 6, 2012</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>opengrok</refname>
+<refpurpose>a wicked fast source browser</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+<cmdsynopsis>
+<command>opengrok
+<optional><option>
+?</option></optional>
+<optional><option>
+A <replaceable>ext:analyzer</replaceable></option></optional>
+<optional><option>
+a <replaceable>on/off</replaceable></option></optional>
+<optional><option>
+B <replaceable>url</replaceable></option></optional>
+<optional><option>
+C</option></optional>
+<optional><option>
+c <replaceable>/path/to/ctags</replaceable></option></optional>
+<optional><option>
+D</option></optional>
+<optional><option>
+d <replaceable>/path/to/data/root</replaceable></option></optional>
+<optional><option>
+e</option></optional>
+<optional><option>
+H</option></optional>
+<optional><option>
+h <replaceable>/path/to/repository</replaceable></option></optional>
+<optional><option>
+I <replaceable>pattern</replaceable></option></optional>
+<optional><option>
+i <replaceable>pattern</replaceable></option></optional>
+<optional><option>
+j <replaceable>class</replaceable></option></optional>
+<optional><option>
+k <replaceable>/path/to/repository</replaceable></option></optional>
+<optional><option>
+K</option></optional>
+<optional><option>
+L <replaceable>path</replaceable></option></optional>
+<optional><option>
+l <replaceable>on/off</replaceable></option></optional>
+<optional><option>
+m <replaceable>number</replaceable></option></optional>
+<optional><option>
+N <replaceable>/path/to/symlink</replaceable></option></optional>
+<optional><option>
+n</option></optional>
+<optional><option>
+O <replaceable>on/off</replaceable></option></optional>
+<optional><option>
+o <replaceable>path</replaceable></option></optional>
+<optional><option>
+P</option></optional>
+<optional><option>
+p <replaceable>/path/to/default/project</replaceable></option></optional>
+<optional><option>
+Q <replaceable>on/off</replaceable></option></optional>
+<optional><option>
+q</option></optional>
+<optional><option>
+R <replaceable>/path/to/configuration</replaceable></option></optional>
+<optional><option>
+r <replaceable>on/off</replaceable></option></optional>
+<optional><option>
+S</option></optional>
+<optional><option>
+s <replaceable>/path/to/source/root</replaceable></option></optional>
+<optional><option>
+T <replaceable>number</replaceable></option></optional>
+<optional><option>
+t <replaceable>number</replaceable></option></optional>
+<optional><option>
+U <replaceable>host:port</replaceable></option></optional>
+<optional><option>
+u <replaceable>url</replaceable></option></optional>
+<optional><option>
+V</option></optional>
+<optional><option>
+v</option></optional>
+<optional><option>
+W <replaceable>/path/to/configuration</replaceable></option></optional>
+<optional><option>
+w <replaceable>webapp-context</replaceable></option></optional>
+<optional><option>
+X <replaceable>url:suffix</replaceable></option></optional>
+<optional><option>
+z <replaceable>number</replaceable></option></optional>
+</command>
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1><title>DESCRIPTION</title>
+<para>
+OpenGrok is a fast and usable source code search and cross reference
+engine written in pure Java. It helps you search, cross-referenece
+and navigate your source tree. It can understand various program file
+formats and version control histories.
+</para>
+</refsect1>
+
+<refsect1><title>OPTIONS</title>
+<variablelist termlength="medium">
+<varlistentry><term><option>?</option></term><listitem><para>Help</para></listitem></varlistentry>
+<varlistentry><term><option>A</option></term><listitem><para>Files with the named extension should be analyzed with the specified class</para></listitem></varlistentry>
+<varlistentry><term><option>a</option></term><listitem><para>Allow or disallow leading wildcards in a search</para></listitem></varlistentry>
+<varlistentry><term><option>B</option></term><listitem><para>Base URL of the user Information provider. Default: "http://www.opensolaris.org/viewProfile.jspa?username="</para></listitem></varlistentry>
+<varlistentry><term><option>C</option></term><listitem><para>Print per project percentage progress information(I/O extensive, since one read through dir structure is made before indexing, needs -v, otherwise it just goes to the log)</para></listitem></varlistentry>
+<varlistentry><term><option>c</option></term><listitem><para>Path to Exuberant Ctags from http://ctags.sf.net by default takes the Exuberant Ctags in PATH.</para></listitem></varlistentry>
+<varlistentry><term><option>D</option></term><listitem><para>Store history cache in a database (needs the JDBC driver in the classpath, typically derbyclient.jar or derby.jar)</para></listitem></varlistentry>
+<varlistentry><term><option>d</option></term><listitem><para>The directory where OpenGrok stores the generated data</para></listitem></varlistentry>
+<varlistentry><term><option>e</option></term><listitem><para>Economical - consumes less disk space. It does not generate hyper text cross reference files offline, but will do so on demand - which could be sightly slow.</para></listitem></varlistentry>
+<varlistentry><term><option>H</option></term><listitem><para>Generate history cache for all repositories</para></listitem></varlistentry>
+<varlistentry><term><option>h</option></term><listitem><para>just generate history cache for the specified repos (absolute path from source root)</para></listitem></varlistentry>
+<varlistentry><term><option>I</option></term><listitem><para>Only files matching this pattern will be examined (supports wildcards, example: -I *.java -I *.c)</para></listitem></varlistentry>
+<varlistentry><term><option>i</option></term><listitem><para>Ignore the named files or directories (supports wildcards, example: -i *.so -i *.dll)</para></listitem></varlistentry>
+<varlistentry><term><option>j</option></term><listitem><para>Name of the JDBC driver class used by the history cache. Can use one of the shorthands "client" (org.apache.derby.jdbc.ClientDriver) or "embedded" (org.apache.derby.jdbc.EmbeddedDriver). Default: "client"</para></listitem></varlistentry>
+<varlistentry><term><option>k</option></term><listitem><para>Kill the history cache for the given repository and exit. Use '*' to delete the cache for all repositories.</para></listitem></varlistentry>
+<varlistentry><term><option>K</option></term><listitem><para>List all repository pathes and exit.</para></listitem></varlistentry>
+<varlistentry><term><option>L</option></term><listitem><para>Path to the subdirectory in the web-application containing the requested stylesheet. The following factory-defaults exist: "default", "offwhite" and "polished"</para></listitem></varlistentry>
+<varlistentry><term><option>l</option></term><listitem><para>Turn on/off locking of the Lucene database during index generation</para></listitem></varlistentry>
+<varlistentry><term><option>m</option></term><listitem><para>The maximum words to index in a file</para></listitem></varlistentry>
+<varlistentry><term><option>N</option></term><listitem><para>Allow this symlink to be followed. Option may be repeated.</para></listitem></varlistentry>
+<varlistentry><term><option>n</option></term><listitem><para>Do not generate indexes, but process all other command line options</para></listitem></varlistentry>
+<varlistentry><term><option>O</option></term><listitem><para>Turn on/off the optimization of the index database as part of the indexing step</para></listitem></varlistentry>
+<varlistentry><term><option>o</option></term><listitem><para>File with extra command line options for ctags</para></listitem></varlistentry>
+<varlistentry><term><option>P</option></term><listitem><para>Generate a project for each of the top-level directories in source root</para></listitem></varlistentry>
+<varlistentry><term><option>p</option></term><listitem><para>This is the path to the project that should be selected by default in the web application(when no other project set either in cookie or in parameter). You should strip off the source root.</para></listitem></varlistentry>
+<varlistentry><term><option>Q</option></term><listitem><para>Turn on/off quick context scan. By default only the first 32k of a file is scanned, and a '[..all..]' link is inserted if the file is bigger. Activating this may slow the server down (Note: this is setting only affects the web application)</para></listitem></varlistentry>
+<varlistentry><term><option>q</option></term><listitem><para>Run as quietly as possible</para></listitem></varlistentry>
+<varlistentry><term><option>R</option></term><listitem><para>Read configuration from the specified file</para></listitem></varlistentry>
+<varlistentry><term><option>r</option></term><listitem><para>Turn on/off support for remote SCM systems</para></listitem></varlistentry>
+<varlistentry><term><option>S</option></term><listitem><para>Search for "external" source repositories and add them</para></listitem></varlistentry>
+<varlistentry><term><option>s</option></term><listitem><para>The root directory of the source tree</para></listitem></varlistentry>
+<varlistentry><term><option>T</option></term><listitem><para>The number of threads to use for index generation. By default the number of threads will be set to the number of available CPUs</para></listitem></varlistentry>
+<varlistentry><term><option>t</option></term><listitem><para>Default tabsize to use (number of spaces per tab character)</para></listitem></varlistentry>
+<varlistentry><term><option>U</option></term><listitem><para>Send the current configuration to the specified address (This is most likely the web-app configured with ConfigAddress)</para></listitem></varlistentry>
+<varlistentry><term><option>u</option></term><listitem><para>URL to the database that contains the history cache. Default: If -j specifies "embedded", "jdbc:derby:$DATA_ROOT/cachedb;create=true"; otherwise, "jdbc:derby://localhost/cachedb;create=true"</para></listitem></varlistentry>
+<varlistentry><term><option>V</option></term><listitem><para>Print version and quit</para></listitem></varlistentry>
+<varlistentry><term><option>v</option></term><listitem><para>Print progress information as we go along</para></listitem></varlistentry>
+<varlistentry><term><option>W</option></term><listitem><para>Write the current configuration to the specified file (so that the web application can use the same configuration</para></listitem></varlistentry>
+<varlistentry><term><option>w</option></term><listitem><para>Context of webapp. Default is /source. If you specify a different name, make sure to rename source.war to that name.</para></listitem></varlistentry>
+<varlistentry><term><option>X</option></term><listitem><para>URL Suffix for the user Information provider. Default: ""</para></listitem></varlistentry>
+<varlistentry><term><option>z</option></term><listitem><para>depth of scanning for repositories in directory structure relative to source root</para></listitem></varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1><title>FILE FORMATS</title>
+<para>
+OpenGrok can grok various program file formats like C, C++, Shell
+Scripts like ksh, sh, Perl, Java, Java Class files, JAR files, ELF
+files, troff man pages, file archives like Zip, Gzip, BZip2, Tar 
+and meta language files like XML, SGML or HTML.
+</para>
+<para>
+OpenGrok supports various source control systems like Mercurial, CVS,
+Subversion, TeamWare, SCCS and Bazaar.
+</para>
+</refsect1>
+
+<refsect1><title>EXAMPLE</title>
+<example>
+<title>Indexing files in /usr/include and storing the output data to 
+/var/tmp/opengrok_data.</title>
+<screen>$ <userinput>opengrok.jar -s /usr/include -d /var/tmp/opengrok_data</userinput>
+</screen>
+</example>
+
+</refsect1>
+
+<refsect1><title>EXIT STATUS</title>
+<variablelist termlength="medium">
+<varlistentry><term>0</term><listitem><para>command executed successfully</para></listitem></varlistentry>
+<varlistentry><term>1</term><listitem><para>error in executing the command</para></listitem></varlistentry>
+</variablelist>
+</refsect1>
+</refentry>
+
